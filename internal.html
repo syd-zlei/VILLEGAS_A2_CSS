@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Claire | Personal Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #11100e;
+            color: #d0d0d0;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #11100e;
+            border-bottom: 1px solid #302a23;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav h2 {
+            color: #c5a77d;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #d0d0d0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #c5a77d;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        #home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            padding: 65px 0;
+        }
+
+        #home > div {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .eyebrow {
+            color: #c5a77d;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        .hero-title {
+            color: #e8dfd2;
+            font-size: 48px;
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .accent {
+            color: #c5a77d;
+        }
+
+        .hero-subtitle {
+            color: #b5b5b5;
+            font-size: 23px;
+            font-weight: normal;
+        }
+
+        .description {
+            color: #b5b5b5;
+            max-width: 520px;
+        }
+
+        .primary-button {
+            display: inline-block;
+            background: #c5a77d;
+            color: #11100e;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .primary-button:hover {
+            background: #e8dfd2;
+        }
+
+        .code-card {
+            background: #1b1916;
+            border: 1px solid #514333;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .dots {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .red { background: #b66b5b; }
+        .yellow { background: #c5a77d; }
+        .green { background: #788c70; }
+
+        .code-comment {
+            color: #c5a77d;
+            margin: 0 0 15px;
+        }
+
+        .code-line {
+            color: #b5b5b5;
+            margin: 5px 0;
+        }
+
+        .code-key {
+            color: #c5a77d;
+        }
+
+        .code-end {
+            color: #788c70;
+            margin-top: 20px;
+        }
+
+        section:not(#home) {
+            padding: 55px 0;
+            border-top: 1px solid #302a23;
+        }
+
+        section h2 {
+            color: #c5a77d;
+            font-size: 30px;
+        }
+
+        section h3 {
+            color: #e8dfd2;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 35px;
+        }
+
+        .profile-photo {
+            width: 210px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #514333;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .muted {
+            color: #b5b5b5;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 210px;
+            background: #1b1916;
+            border: 1px solid #514333;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #c5a77d;
+        }
+
+        .education-card {
+            background: #1b1916;
+            border-left: 4px solid #c5a77d;
+            padding: 22px;
+            border-radius: 6px;
+        }
+
+        .education-card p:first-of-type {
+            color: #c5a77d;
+        }
+
+        .project-card {
+            flex: 1;
+            min-width: 240px;
+            background: #1b1916;
+            border: 1px solid #514333;
+            border-radius: 10px;
+            padding: 22px;
+        }
+
+        .project-category {
+            color: #c5a77d;
+            font-size: 13px;
+        }
+
+        .goal-card {
+            background: #1b1916;
+            border: 1px solid #514333;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .goal-quote {
+            color: #c5a77d;
+            font-weight: bold;
+        }
+
+        .contact-detail {
+            color: #c5a77d;
+        }
+
+        footer {
+            background: #1b1916;
+            border-top: 1px solid #514333;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p:first-child {
+            color: #c5a77d;
+            margin: 0;
+        }
+
+        footer p:last-child {
+            color: #888;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                position: relative;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav div {
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            main {
+                padding: 30px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>Sydney Villegas.</h2>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#goals">Goals</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section id="home">
+        <div>
+            <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+            <h1 class="hero-title">Hi, I'm <span class="accent">Sydney Villegas.</span></h1>
+            <h2 class="hero-subtitle">Information Technology Student</h2>
+            <p class="description">
+                I am an IT student who enjoys programming, web development, and exploring new technologies. I am continuously learning and improving my skills through academic activities, projects, and personal experiences.
+            </p>
+            <a href="#about" class="primary-button">Explore My Profile</a>
+        </div>
+
+        <div class="code-card">
+            <div class="dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+
+            <p class="code-comment">// a little about me</p>
+            <p class="code-line"><span class="code-key">name:</span> "Sydney Claire"</p>
+            <p class="code-line"><span class="code-key">course:</span> "Information Technology"</p>
+            <p class="code-line"><span class="code-key">interest:</span> "Programming"</p>
+            <p class="code-line"><span class="code-key">hobby:</span> "Reading"</p>
+            <p class="code-line"><span class="code-key">goal:</span> "Become a skilled developer"</p>
+            <p class="code-end">// always learning something new.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="profile.jpg" alt="Sydney Claire's Profile Picture" class="profile-photo">
+
+            <div class="about-text">
+                <h3>Getting to Know Me</h3>
+                <p class="muted">
+                    I am currently pursuing a degree in Information Technology at National University Fairview. I enjoy learning how technology works and how programming can be used to create useful applications and websites.
+                </p>
+                <p class="muted">
+                    As a student, I know that I still have a lot to learn. I value continuous improvement, patience, and determination. Every activity and project gives me an opportunity to gain experience and become more confident in my abilities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <p class="muted">These are some of the technical and personal skills I am developing as an IT student.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>HTML & CSS</h3>
+                <p class="muted">Creating and styling basic webpages and layouts.</p>
+            </div>
+            <div class="card">
+                <h3>Java Programming</h3>
+                <p class="muted">Understanding programming fundamentals and logic.</p>
+            </div>
+            <div class="card">
+                <h3>Problem-Solving</h3>
+                <p class="muted">Analyzing problems and finding possible solutions.</p>
+            </div>
+            <div class="card">
+                <h3>Creativity</h3>
+                <p class="muted">Exploring ideas and improving design concepts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-card">
+            <h3>NU Fairview</h3>
+            <p>Bachelor of Science in Information Technology</p>
+            <p class="muted">
+                Currently studying Information Technology and gaining knowledge in programming, web development, databases, computer networks, and other areas of technology.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p class="muted">Some of the academic projects I have worked on as an IT student.</p>
+
+        <div class="card-container">
+            <div class="project-card">
+                <p class="project-category">DATA STRUCTURES</p>
+                <h3>Movie Playlist System</h3>
+                <p class="muted">A Python-based project that uses a circular doubly linked list to organize and manage a movie playlist.</p>
+            </div>
+
+            <div class="project-card">
+                <p class="project-category">WEB DEVELOPMENT</p>
+                <h3>School Equipment Borrowing System</h3>
+                <p class="muted">A proposed web-based system for managing equipment borrowing requests, approvals, and returns.</p>
+            </div>
+
+            <div class="project-card">
+                <p class="project-category">JAVA PROGRAMMING</p>
+                <h3>Parking Management System</h3>
+                <p class="muted">A Java-based parking management application with a graphical user interface and parking slot monitoring.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="goals">
+        <h2>My Goals</h2>
+        <div class="goal-card">
+            <p class="muted">
+                My goal is to continue improving my technical knowledge and become a skilled IT professional. I want to gain more experience in programming and web development, work on meaningful projects, and explore different opportunities in the technology industry.
+            </p>
+            <p class="goal-quote">"Small progress is still progress."</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p class="muted">Thank you for visiting my personal portfolio! Feel free to connect with me.</p>
+        <p class="muted">Email: <span class="contact-detail">Add your email address here</span></p>
+        <p class="muted">Location: Philippines</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sydney Villegas. | Personal Portfolio</p>
+    <p>© 2026 Sydney Claire P. Villegas. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
